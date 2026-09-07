@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Một điều anh muốn nói...</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff0f5, #ffd6e5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #64283d;
+}
+
+.card {
+    width: 90%;
+    max-width: 500px;
+    padding: 40px 25px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(180,70,110,0.25);
+}
+
+.envelope {
+    font-size: 60px;
+    animation: float 2s infinite;
+}
+
+h1 {
+    color: #d52f5d;
+    font-size: 27px;
+}
+
+.text {
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: 0;
+    animation: appear 1s forwards;
+}
+
+.t1 { animation-delay: 0.5s; }
+.t2 { animation-delay: 1.5s; }
+.t3 { animation-delay: 2.5s; }
+.t4 { animation-delay: 3.5s; }
+
+.final {
+    margin-top: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #d52f5d;
+    opacity: 0;
+    animation: appear 1s 4.5s forwards;
+}
+
+.final small {
+    font-size: 16px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    animation: rise 5s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="envelope">💌</div>
+
+    <h1>
+        Phạm Thị Ngọc Ánh – Bướng
+    </h1>
+
+    <div class="text t1">
+        Mới chỉ 1 tháng thôi...
+    </div>
+
+    <div class="text t2">
+        1 tháng bắt đầu nói chuyện,
+        làm quen và tìm hiểu nhau.
+    </div>
+
+    <div class="text t3">
+        Anh thật sự thích những lúc
+        được nói chuyện với em.
+    </div>
+
+    <div class="text t4">
+        Và hôm nay anh muốn hỏi em
+        một điều...
+    </div>
+
+    <div class="final">
+
+        Em làm bạn gái anh nhé?
+
+        <br>
+
+        <small>
+            Để anh yêu thương, bảo vệ
+            và lo lắng cho em ^^
+        </small>
+
+    </div>
+
+</div>
+
+<script>
+
+setInterval(function() {
+
+    let heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.textContent = ["❤","💗","💕","💖"][
+        Math.floor(Math.random() * 4)
+    ];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 5000);
+
+}, 500);
+
+</script>
+
+</body>
+</html>
